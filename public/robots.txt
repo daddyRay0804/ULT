@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ult-translator.com/sitemap.xml
+
+# Crawl-delay (optional, for rate limiting)
+Crawl-delay: 1

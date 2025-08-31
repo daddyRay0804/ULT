@@ -1,0 +1,57 @@
+{
+  "name": "ult-ai-translator-landing",
+  "version": "1.0.0",
+  "description": "ULT AI Translator official landing page with multi-language support",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx serve public -p 8000",
+    "build": "echo 'Static site - no build required'",
+    "start": "npx serve public -p 8000",
+    "test:lighthouse": "npx lighthouse http://localhost:8000/en/ --output html --output-path ./lighthouse-report.html",
+    "test:accessibility": "npx axe-core http://localhost:8000/en/",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "lint:html": "npx html-validate public/en/index.html public/zh/index.html",
+    "lint:css": "npx stylelint public/assets/styles.css",
+    "lint:js": "npx eslint public/assets/app.js",
+    "format": "npx prettier --write 'public/**/*.{html,css,js}'"
+  },
+  "keywords": [
+    "ai-translator",
+    "desktop-translation",
+    "multilingual",
+    "landing-page",
+    "seo",
+    "accessibility",
+    "responsive-design"
+  ],
+  "author": "ULT AI Translator Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ult-ai/translator-landing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ult-ai/translator-landing/issues"
+  },
+  "homepage": "https://ult-translator.com",
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "lighthouse": "^11.6.0",
+    "axe-core": "^4.8.3",
+    "html-validate": "^8.12.0",
+    "stylelint": "^16.0.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
