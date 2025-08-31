@@ -1,4 +1,4 @@
-// Vercel Edge Function for language negotiation
+// Vercel API Function for language negotiation
 // This function reads the Accept-Language header and redirects to the appropriate language version
 
 export default function handler(req, res) {
@@ -30,9 +30,9 @@ function parseAcceptLanguage(acceptLanguage) {
   return acceptLanguage
     .split(',')
     .map(lang => {
-      const [language, quality = '1'] = lang.trim().split(';q=');
+      const [languageCode, quality = '1'] = lang.trim().split(';q=');
       return {
-        language: language.toLowerCase(),
+        language: languageCode.toLowerCase(),
         quality: parseFloat(quality)
       };
     })
@@ -54,8 +54,3 @@ function selectBestLanguage(languages) {
   // Default to English for all other cases
   return 'en';
 }
-
-// Export for Vercel Edge Functions
-export const config = {
-  runtime: 'edge'
-};
